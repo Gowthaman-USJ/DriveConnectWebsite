@@ -1,12 +1,26 @@
-FROM maven:3.9-eclipse-temurin-25
+FROM maven:3.9-eclipse-temurin-25 AS builder
 
 WORKDIR /app
 
+# 1. Leverage Docker layer caching for dependencies
 COPY pom.xml .
-COPY src ./src
+RUN mvn dependency:go-offline -B
 
+# 2. Copy source and build application
+COPY src ./src
 RUN mvn clean package -DskipTests
 
-EXPOSE 10000
+# 3. Use Multi-Stage Build to keep final image small & secure
+FROM eclipse-temurin:25-jre
 
-CMD ["sh", "-c", "java -jar target/*.jar --server.port=10000"]
+WORKDIR /app
+
+# Copy the generated JAR file explicitly
+COPY --from=builder /app/target/*.jar app.jar
+
+# Northflank exposes PORT via environment variable
+ENV PORT=10000
+EXPOSE ${PORT}
+
+# 4. Execute using direct exec form without wildcards
+ENTRYPOINT ["java", "-jar", "app.jar"]

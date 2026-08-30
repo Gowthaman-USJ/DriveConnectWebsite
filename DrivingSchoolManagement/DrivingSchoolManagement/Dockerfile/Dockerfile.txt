@@ -12,12 +12,13 @@ RUN mvn clean package -DskipTests
 # Stage 2: Runtime stage
 FROM eclipse-temurin:21-jre
 
-# Switch to root to ensure directory creation permissions
 USER root
 
+# Create the working directory explicitly before setting WORKDIR
+RUN mkdir -p /app
 WORKDIR /app
 
-# Copy the generated application JAR explicitly
+# Copy built artifact using absolute target path
 COPY --from=builder /build/target/*.jar /app/app.jar
 
 ENV PORT=10000

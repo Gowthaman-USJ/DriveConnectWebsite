@@ -1,0 +1,189 @@
+<header class="topbar">
+    <div class="topbar-left">
+
+        <button class="mob-menu-btn topbar-icon-btn d-lg-none"
+            onclick="document.getElementById('sidebar').classList.toggle('open')">
+            <i class="bi bi-list"></i>
+        </button>
+
+        <div class="topbar-icon-btn">
+            <i class="bi bi-car-front"></i>
+        </div>
+
+        <div class="topbar-text">
+            <div class="topbar-title" id="topbarTitle">Vehicles</div>
+            <small class="text-muted">Manage driving school vehicles</small>
+        </div>
+    </div>
+
+    <div class="d-flex gap-2 justify-content-start">
+
+        <a onclick="openAddVehicle()" class=" btn btn-primary d-flex align-items-center
+            gap-2">
+            <i class="bi bi-plus-circle"></i>
+            Add Vehicle
+        </a>
+    </div>
+</header>
+
+<div class="page-body">
+
+    <div class="container-fluid px-4">
+
+        <div class="card-table">
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle mb-0">
+
+                    <thead class="table-light">
+                        <tr>
+                            <th>Vehicle No</th>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>Transmission</th>
+                            <th>Fuel Type</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="vehicleTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="vehicleModal" tabindex="-1">
+    <div class="modal-dialog view-modal-dialog modal-dialog-centered">
+        <div class="modal-content view-modal">
+
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-info-circle"></i> <strong>Vehicle Details</strong></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="view-modal-body">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="fw-bold">Vehicle ID</label>
+                        <input id="m_vehID" class="form-control" disabled>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="fw-bold">Plate Number</label>
+                        <input id="m_platenum" class="form-control" disabled>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="fw-bold">Brand</label>
+                        <input id="m_brand" class="form-control" disabled>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="fw-bold">Model</label>
+                        <input id="m_model" class="form-control" disabled>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="fw-bold">Make Year</label>
+                        <input id="m_makeyear" class="form-control" disabled>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="fw-bold">Fuel Type</label>
+                        <input id="m_fueltype" class="form-control" disabled>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="fw-bold">Mileage(KM) </label>
+                        <input id="m_mileage" class="form-control" disabled>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="fw-bold">Status</label>
+                        <input id="m_status" class="form-control" disabled>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="fw-bold">Remarks</label>
+                        <textarea id="m_notes" class="form-control" rows="2" style="resize: none;" disabled></textarea>
+                    </div>
+
+                    <footer class="footer" style="border-top: none;">
+
+                        <p class="mb-1">© 2026 <b>DriveConnect</b>. Connecting Students and Driving Schools.
+                    </footer>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteVehicleModal" tabindex="-1">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-danger">
+                    <i class="bi bi-trash-fill me-2"></i>
+                    Delete Vehicle
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body text-center">
+                <i class="bi bi-exclamation-triangle-fill text-warning fs-1"></i>
+
+                <h5 class="mt-3">Are you sure?</h5>
+
+                <p class="text-muted">
+                    This vehicle will be permanently deleted.
+                </p>
+            </div>
+
+            <div class="modal-footer border-0">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+
+                <button class="btn btn-danger" onclick="confirmDeleteVehicle()">
+                    Delete
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="deleteToast" class="toast align-items-center text-bg-danger border-0 compact-toast" role="alert">
+        <div class="d-flex">
+            <div class="toast-body">
+                Vehicle deleted successfully !
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+    </div>
+
+    <div id="vehicleToast" class="toast text-bg-success border-0 compact-toast">
+        <div class="d-flex">
+            <div class="toast-body" id="vehicleToastMessage"> Success Message</div>
+
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+    </div>
+
+
+
+</div>

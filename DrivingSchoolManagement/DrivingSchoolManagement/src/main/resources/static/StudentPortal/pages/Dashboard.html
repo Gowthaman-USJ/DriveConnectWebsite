@@ -1,0 +1,58 @@
+<header class="topbar">
+    <button class="ib mob-tog" onclick="document.getElementById('sidebar').classList.toggle('open')"><i
+            class="bi bi-list"></i></button>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="topbar-icon-btn">
+            <i class="bi bi-grid-1x2"></i>
+        </div>
+
+        <div class="tb-title" id="tbTitle">Dashboard</div>
+    </div>
+    <div class="topbar-actions">
+        <div class="uav" id="topbarAvatar" style=" width:36px;height:36px;font-size:0.85rem;cursor:pointer;"
+            title="Profile">A
+        </div>
+    </div>
+</header>
+
+
+
+<div class="content">
+    <div class="view active" id="view-dashboard">
+        <div class="welcome-banner">
+            <h2>
+                <span id="greeting"></span>,
+                <span id="studenname"></span> 👋
+            </h2>
+        </div>
+        <div class="row g-3">
+            <div class="col-lg-7">
+                <div class="panel">
+                    <div class="ph">
+                        <h6><i class="bi bi-calendar-check text-primary me-2"></i>Upcoming Lessons in the Next 7 Days
+                        </h6><button class="btn-prim" style="font-size:.74rem;padding:.38rem .9rem"
+                            onclick="loadPage('BookLesson.html','BookLesson')"><i
+                                class="bi bi-plus-lg me-1"></i>Book</button>
+                    </div>
+                    <div id="dashUpcoming"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="panel mb-3">
+                    <div class="ph">
+                        <h6><i class="bi bi-lightning text-primary me-2"></i>Quick Actions</h6>
+                    </div>
+                    <div class="pbd d-flex flex-column gap-2">
+                        <button class="qbtn" onclick="nav('book')">
+                            <i class="bi bi-calendar-plus"></i>
+                            Book a lesson
+                        </button>
+                        <button class="qbtn" onclick="nav('lessons')"><i class="bi bi-calendar3"></i> View all
+                            lessons</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

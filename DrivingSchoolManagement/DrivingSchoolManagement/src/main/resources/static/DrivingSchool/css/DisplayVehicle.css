@@ -1,0 +1,20 @@
+.status {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.status.available {
+    background: #d1e7dd;
+    color: #198754;
+}
+
+.status.lesson {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status.maintenance {
+    background: #f8d7da;
+    color: #842029;
+}

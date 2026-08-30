@@ -1,0 +1,206 @@
+<div class="toast-container position-fixed top-0 end-0 p-3">
+
+    <div id="statusToast" class="toast text-bg-success border-0 compact-toast" role="alert">
+
+        <div class="d-flex align-items-center">
+            <div class="toast-body py-2 px-3">
+                <i class="bi bi-check-circle-fill me-1"></i>
+                Status Updated Successfully !
+            </div>
+
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+
+    </div>
+
+</div>
+
+<header class="topbar">
+    <div class="topbar-left">
+        <button class="mob-menu-btn topbar-icon-btn"
+            onclick="document.getElementById('sidebar').classList.toggle('open')">
+            <i class="bi bi-list"></i>
+        </button>
+
+        <div class="topbar-icon-btn2">
+            <i class="bi bi-people"></i>
+        </div>
+
+        <div class="topbar-text">
+            <div class="topbar-title" id="topbarTitle">My Students</div>
+            <small class="text-muted">Manage all students</small>
+        </div>
+    </div>
+</header>
+
+<div class="page-body">
+    <div class="view active" id="view-students">
+        <!-- Search bar -->
+        <div class="d-flex gap-2 mb-3">
+            <div class="input-group" style="max-width:320px;">
+                <span class="input-group-text bg-white"
+                    style="border-radius:50px 0 0 50px;border:1.5px solid #e0e7ef;border-right:none;"><i
+                        class="bi bi-search text-muted"></i></span>
+                <input type="text" id="studentSearch" class="form-control border-start-0" placeholder="Search students…"
+                    style="border-radius:0 50px 50px 0;border:1.5px solid #e0e7ef;border-left:none;">
+            </div>
+        </div>
+        <div class="panel">
+            <table class="roster-table">
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Contact Number</th>
+                        <th>Course/Package</th>
+                        <th>Progress</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal fade" id="changeStatusModal" tabindex="-1">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content status-modal">
+
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title">
+                        <i class="bi bi-pencil-square text-primary me-2"></i>
+                        Change Status
+                    </h5>
+                </div>
+
+                <div class="modal-body pt-2 mt-2">
+
+                    <select class="form-select mb-3" id="status">
+                        <option selected disabled>Select Status</option>
+                        <option value="Training">Traning</option>
+                        <option value="TestReady">Test Ready</option>
+                        <option value="OnHold">On Hold</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+
+                    <div class="d-flex justify-content-end gap-2">
+                        <button class="btn btn-light" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+
+                        <button type="button" class="btn btn-primary" id="saveStatusBtn">
+                            Save
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="studentModal" tabindex="-1">
+        <div class="modal-dialog view-modal-dialog modal-dialog-centered">
+            <div class="modal-content view-modal">
+
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-info-circle"></i> <strong>Student Details</strong></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="view-modal-body">
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <label class="fw-bold">First Name</label>
+                            <input id="m_firstName" class="form-control" disabled>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="fw-bold">Last Name</label>
+                            <input id="m_lastName" class="form-control" disabled>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="fw-bold">Email Address</label>
+                            <input id="m_email" class="form-control" disabled>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="fw-bold">Phone Number</label>
+                            <input id="m_phone" class="form-control" disabled>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="fw-bold">Date of Birth</label>
+                            <input id="m_dob" type="date" class="form-control" disabled>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="fw-bold">Gender</label>
+                            <input id="m_gender" class="form-control" disabled>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="fw-bold">Street</label>
+                            <input id="m_street" class="form-control" disabled>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="fw-bold">City </label>
+                            <input id="m_city" class="form-control" disabled>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="fw-bold">State/Province</label>
+                            <input id="m_state" class="form-control" disabled>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="fw-bold">ZIP / Postal Code</label>
+                            <input id="m_zip" class="form-control" disabled>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="fw-bold">License Type</label>
+                            <input id="m_licenseType" class="form-control" disabled>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="fw-bold">Transmission Preference </label>
+                            <input id="m_transmission" class="form-control" disabled>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="fw-bold">Driving Experience </label>
+                            <input id="m_experience" class="form-control" disabled>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="fw-bold">Preferred Lesson Times</label>
+                            <input id="m_lessonTime" class="form-control" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="fw-bold">Additional Notes</label>
+                            <input id="m_notes" class="form-control" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="footer" style="border-top: none;">
+
+                    <p class="mb-1">© 2026 <b>DriveConnect</b>. Connecting Students and Driving Schools.
+                </footer>
+            </div>
+
+        </div>
+    </div>

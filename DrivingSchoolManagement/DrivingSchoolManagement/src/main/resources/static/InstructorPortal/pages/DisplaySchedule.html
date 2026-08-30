@@ -1,0 +1,85 @@
+<header class="topbar">
+    <div class="topbar-left">
+        <button class="mob-menu-btn topbar-icon-btn"
+            onclick="document.getElementById('sidebar').classList.toggle('open')">
+            <i class="bi bi-list"></i>
+        </button>
+
+        <div class="topbar-icon-btn2">
+            <i class="bi bi-calendar3"></i>
+        </div>
+
+        <div class="topbar-text">
+            <div class="topbar-title" id="topbarTitle">Schedule</div>
+            <small class="text-muted">Manage all schedules</small>
+        </div>
+    </div>
+</header>
+
+<div class="view active" id="view-schedule">
+    <div class="page-body">
+        <div class="container-fluid px-4">
+            <div class="d-flex gap-2 mb-3">
+
+                <div><input type="date" id="dateFilter" onchange="filterScheduleByDate()"
+                        class="form-control w-auto date-pill"></div>
+                <button type="button" class="btn btn-outline-dark btn-sm resetbutton" onclick="resetDate()">
+                    Reset
+                </button>
+            </div>
+        </div>
+        <div class="row g-3">
+            <div class="col-lg-8">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h6><i class="bi bi-calendar-check text-primary me-2"></i>Full Schedule — <span
+                                id="todayDate"></span></h6>
+                    </div>
+                    <div class="panel-body">
+                        <div class="card-table">
+                            <div class="table-responsive">
+
+                                <table class="table table-hover align-middle mb-0">
+
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Time</th>
+                                            <th>Student ID</th>
+                                            <th>Student</th>
+                                            <th>Course/Package</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="ScheduleTableBody">
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel mb-3">
+                    <div class="panel-header">
+                        <h6>Summary</h6>
+                    </div>
+                    <div class="panel-body">
+                        <div class="detail-row d-flex justify-content-between py-2 border-bottom"><span
+                                class="text-muted" style="font-size:0.85rem;">Total
+                                lessons</span><strong id="totalLessons"></strong></div>
+                        <div class="detail-row d-flex justify-content-between py-2 border-bottom"><span
+                                class="text-muted" style="font-size:0.85rem;">Completed</span><strong
+                                class="text-success" id="completedLessons"></strong></div>
+                        <div class="detail-row d-flex justify-content-between py-2 border-bottom"><span
+                                class="text-muted" style="font-size:0.85rem;">In progress</span><strong
+                                class="text-primary" id="inProgressLessons"></strong></div>
+                        <div class="detail-row d-flex justify-content-between py-2"><span class="text-muted"
+                                style="font-size:0.85rem;">Upcoming</span><strong id="upcomingLessons"></strong></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>

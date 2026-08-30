@@ -1,0 +1,389 @@
+<header class="topbar d-flex align-items-center justify-content-start gap-2">
+    <i class="bi bi-person-plus me-1 text-primary fs-5"></i>
+    <div class="topbar-text">
+        <div class="topbar-title"><b>Update Profile</b></div>
+    </div>
+</header>
+
+<div class="container-fluid ">
+    <div class="page-body">
+        <div class="dash-card">
+            <div class="dash-card-body">
+
+                <form id="editSchoolProfileForm" action="#" method="post" novalidate>
+                    <div class="form-section">
+                        <div class="section-heading2">
+                            <div class="section-icon2"><i class="bi bi-building me-0"></i></div>
+                            <div>
+                                <h5>School Information</h5>
+                                <small class="text-muted fw-normal">
+                                    Basic details about your driving school
+                                </small>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="schoolName" class="form-label">School Name <span
+                                        class="required-mark">*</span></label>
+                                <input type="text" class="form-control" id="schoolName" name="schoolName"
+                                    placeholder="SafeDrive Academy" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="drivingLicenseNo" class="form-label">Driving School License Number <span
+                                        class="required-mark">*</span></label>
+                                <input type="text" class="form-control" id="drivingLicenseNo" name="drivingLicenseNo"
+                                    placeholder="DSL-987654" required>
+                                <div class="input-hint">Your official driving school license issued by the transport
+                                    authority.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="yearEstablished" class="form-label">Year Established</label>
+                                <input type="number" class="form-control" id="yearEstablished" name="yearEstablished"
+                                    placeholder="2010" min="1900" max="2026">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="schoolEmail" class="form-label">School Email <span
+                                        class="required-mark">*</span></label>
+                                <input type="email" class="form-control" id="schoolEmail" name="schoolEmail"
+                                    placeholder="info@safedrive.com" required>
+                                <div class="input-hint">This will be used to sign in to your school dashboard.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="schoolPhone" class="form-label">School Phone <span
+                                        class="required-mark">*</span></label>
+                                <input type="tel" class="form-control" id="schoolPhone" name="schoolPhone"
+                                    placeholder="+1 (555) 987-6543" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="description" class="form-label">School Description</label>
+                                <textarea class="form-control" id="description" name="description" rows="3"
+                                    placeholder="Briefly describe your school, specialties, and what makes you stand out..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-section">
+                        <div class="section-heading2">
+                            <div class="section-icon2"><i class="bi bi-person-badge"></i></div>
+                            <div>
+                                <h5>Primary Contact</h5>
+                                <small class="text-muted fw-normal">Owner or manager responsible for this
+                                    account</small>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="contactFirstName" class="form-label">Full Name <span
+                                        class="required-mark">*</span></label>
+                                <input type="text" class="form-control" id="contactFullName" name="contactFullName"
+                                    placeholder="Jane" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="contactPhone" class="form-label">Direct Phone <span
+                                        class="required-mark">*</span></label>
+                                <input type="tel" class="form-control" id="contactPhone" name="contactPhone"
+                                    placeholder="+1 (555) 456-7890" required>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-section">
+                        <div class="section-heading2">
+                            <div class="section-icon2"><i class="bi bi-geo-alt"></i></div>
+                            <div>
+                                <h5>School Location</h5>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="street" class="form-label">Street Address <span
+                                        class="required-mark">*</span></label>
+                                <input type="text" class="form-control" id="street" name="street"
+                                    placeholder="456 Oak Avenue" required>
+                            </div>
+                            <div class="col-md-5">
+                                <label for="city" class="form-label">City <span class="required-mark">*</span></label>
+                                <input type="text" class="form-control" id="city" name="city" placeholder="Springfield"
+                                    required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="state" class="form-label">State / Province <span
+                                        class="required-mark">*</span></label>
+                                <input type="text" class="form-control" id="state" name="state" placeholder="California"
+                                    required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="zip" class="form-label">ZIP / Postal Code <span
+                                        class="required-mark">*</span></label>
+                                <input type="text" class="form-control" id="zip" name="zip" placeholder="90210"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-section">
+
+                        <div class="section-heading2">
+                            <div class="section-icon2">
+                                <i class="bi bi-journal-bookmark"></i>
+                            </div>
+                            <div>
+                                <h5>Course Information</h5>
+                            </div>
+                        </div>
+
+
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label class="form-label">
+                                    Courses & Packages
+                                </label>
+                                <div id="packageContainer">
+                                    <div class="package-item border rounded p-3 mb-3">
+                                        <div class="row g-3">
+
+                                            <div class="col-md-4">
+
+                                                <label class="form-label">
+                                                    Type
+                                                </label>
+                                                <select class="form-select packageType" name="packageType[]">
+                                                    <option value="Course">
+                                                        Course
+                                                    </option>
+                                                    <option value="Package">
+                                                        Package
+                                                    </option>
+                                                </select>
+                                            </div>
+
+
+                                            <div class="col-md-8">
+
+                                                <label class="form-label">
+                                                    Name
+                                                </label>
+                                                <input type="text" class="form-control packageName" name="packageName[]"
+                                                    value="Beginner Driving Package">
+                                            </div>
+
+
+                                            <div class="col-md-6">
+
+                                                <label class="form-label">
+                                                    Total Sessions
+                                                </label>
+                                                <input type="number" class="form-control packageDuration"
+                                                    name="packageDuration[]" value="20">
+                                            </div>
+
+
+                                            <div class="col-md-6">
+
+                                                <label class="form-label">
+                                                    Price
+                                                </label>
+
+                                                <div class="input-group">
+
+                                                    <span class="input-group-text">
+                                                        Rs.
+                                                    </span>
+                                                    <input type="number" class="form-control packagePrice"
+                                                        name="packagePrice[]" value="50000">
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="col-12">
+
+                                                <label class="form-label">
+                                                    Description
+                                                </label>
+
+                                                <textarea class="form-control packageDescription"
+                                                    name="packageDescription[]">Includes practical lessons and test preparation</textarea>
+                                            </div>
+
+                                            <div class="col-12 text-end">
+                                                <button type="button" class="btn btn-outline-danger removePackage">
+                                                    <i class="bi bi-trash"></i>
+                                                    Remove
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="btn btn-outline-primary mt-2" id="addPackage">
+
+                                    <i class="bi bi-plus-circle"></i>
+                                    Add Another Course / Package
+
+                                </button>
+
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label for="transmission" class="form-label">
+                                    Transmission Types Offered
+                                    <span class="required-mark">*</span>
+                                </label>
+
+                                <select class="form-select" id="transmission" name="transmission" required>
+
+                                    <option value="Auto">
+                                        Automatic only
+                                    </option>
+
+                                    <option value="Manual">
+                                        Manual only
+                                    </option>
+
+                                    <option value="Both">
+                                        Both automatic and manual
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label for="operatingHours" class="form-label">
+                                    Operating Hours
+                                    <span class="required-mark">*</span>
+                                </label>
+
+                                <select class="form-select" id="operatingHours" name="operatingHours" required>
+
+                                    <option value="Weekday">
+                                        Weekdays only
+                                    </option>
+
+                                    <option value="Weekend">
+                                        Weekends only
+                                    </option>
+
+                                    <option value="Both">
+                                        Weekdays & weekends
+                                    </option>
+
+                                    <option value="Flex">
+                                        Flexible / by appointment
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-section">
+                        <div class="section-heading2">
+                            <div class="section-icon2"><i class="bi bi-file-earmark-check"></i></div>
+                            <div>
+                                <h5>Licensing &amp; Verification</h5>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="insuranceProvider" class="form-label">Insurance Provider <span
+                                        class="required-mark">*</span></label>
+                                <input type="text" class="form-control" id="insuranceProvider" name="insuranceProvider"
+                                    placeholder="ABC Insurance Co." required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="insurancePolicy" class="form-label">Insurance Policy Number <span
+                                        class="required-mark">*</span></label>
+                                <input type="text" class="form-control" id="insurancePolicy" name="insurancePolicy"
+                                    placeholder="POL-123456789" required>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-section">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="password" class="form-label">Password <span
+                                        class="required-mark">*</span></label>
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="Minimum 8 characters" minlength="8" required>
+                                <div class="input-hint">Use at least 8 characters with a mix of letters and numbers.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+
+                            <a href="#" onclick="loadPage('DisplayProfile.html','profile')"
+                                class="text-muted text-decoration-none">
+                                <i class="bi bi-arrow-left me-1"></i> Back to Home
+                            </a>
+
+                            <button type="submit" class="btn btn-primary px-4">
+                                <i class="bi bi-check-circle me-1"></i>
+                                Update Profile
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 9999">
+
+    <div id="deleteConfirmToast" class="toast border-0 shadow" role="alert">
+
+        <div class="toast-header">
+            <i class="bi bi-exclamation-triangle-fill text-danger me-2"></i>
+
+            <strong class="me-auto">
+                Confirm Delete
+            </strong>
+
+            <button type="button" class="btn-close" data-bs-dismiss="toast">
+            </button>
+        </div>
+
+        <div class="toast-body">
+
+            <div id="deleteConfirmMessage" class="mb-3">
+                Are you sure you want to delete this course?
+            </div>
+
+            <div class="text-end">
+
+                <button type="button" class="btn btn-secondary btn-sm me-2" id="cancelDeleteBtn">
+                    Cancel
+                </button>
+
+                <button type="button" class="btn btn-danger btn-sm" id="confirmDeleteBtn">
+                    Delete
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

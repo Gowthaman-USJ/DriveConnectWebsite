@@ -1,0 +1,68 @@
+.resetbutton {
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 0.8rem;
+    line-height: 1;
+}
+
+@media (max-width: 576px) {
+    .resetbutton {
+        width: 100%;
+        margin-top: 8px;
+    }
+}
+
+.date-pill {
+
+    width: 100%;
+    margin-left: -20px;
+    border: 1px solid #dbe3ef;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+    padding: 12px 35px !important;
+    font-size: 16px;
+}
+
+
+.table {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.table thead th {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+    background: #f8f9fb !important;
+    border-bottom: 1px solid #e9ecef !important;
+    padding: 0.9rem;
+}
+
+.table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background: #f6f9ff;
+}
+
+.table td {
+    padding: 0.9rem;
+    font-size: 0.85rem;
+}
+
+.badge-completed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.badge-scheduled {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.badge-inProgress {
+    background: #fef3c7;
+    color: #b45309;
+}

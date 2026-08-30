@@ -1,0 +1,84 @@
+<header class="topbar">
+    <button class="ib mob-tog" onclick="document.getElementById('sidebar').classList.toggle('open')"><i
+            class="bi bi-list"></i></button>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="topbar-icon-btn">
+            <i class="bi bi-person-circle"></i>
+        </div>
+        <div class="tb-title" id="tbTitle">Profile</div>
+    </div>
+</header>
+
+
+<div class="content">
+    <div class="view active" id="view-profile">
+        <div class="row g-3 justify-content-center">
+            <div class="col-lg-4">
+                <div class="panel mb-3">
+                    <div class="pbd" style="text-align:center;padding:1.75rem 1.2rem">
+                        <div id="profileavatar"
+                            style="width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#60a5fa);display:flex;align-items:center;justify-content:center;font-size:1.7rem;font-weight:800;color:#fff;margin:0 auto .85rem">
+                        </div>
+                        <div id="name" style="font-weight:800;font-size:1rem"></div>
+                        <div id="email" style="font-size:.76rem;color:var(--muted);margin:.15rem 0 .65rem">
+                        </div>
+                        <span id="status" class="pill p-green"><i class="bi bi-patch-check-fill"></i></span>
+                        <div style="height:1px;background:#f1f5f9;margin:1rem 0"></div>
+                        <div style="font-size:.76rem;text-align:left">
+                            <div
+                                style="display:flex;justify-content:space-between;padding:.38rem 0;border-bottom:1px solid #f1f5f9">
+                                <span style="color:var(--muted)">Student ID</span><strong id="stuID2"></strong>
+                            </div>
+                            <div
+                                style="display:flex;justify-content:space-between;padding:.38rem 0;border-bottom:1px solid #f1f5f9">
+                                <span style="color:var(--muted)">School</span><strong id="drivingschool"></strong>
+                            </div>
+                            <div
+                                style="display:flex;justify-content:space-between;padding:.38rem 0;border-bottom:1px solid #f1f5f9">
+                                <span style="color:var(--muted)">Package</span><strong id="coursename"></strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-8">
+                <div class="panel mb-3">
+                    <div class="ph">
+                        <h6><i class="bi bi-person-gear text-primary me-2"></i>Personal Information</h6>
+                    </div>
+                    <div class="pbd">
+                        <div class="row g-3">
+                            <div class="col-sm-6"><label class="fl">First name</label><input class="fc" id="Fname"
+                                    value="Alex" readonly>
+                            </div>
+                            <div class="col-sm-6"><label class="fl">Last name</label><input class="fc" id="Lname"
+                                    value="Fernando" readonly>
+                            </div>
+                            <div class="col-sm-6"><label class="fl">Email</label><input class="fc" id="emailinfo"
+                                    value="alex.fernando@gmail.com" readonly></div>
+                            <div class="col-sm-6"><label class="fl">Phone</label><input class="fc" id="phone"
+                                    value="+94 77 123 4567" readonly>
+                            </div>
+                            <div class="col-sm-6"><label class="fl">Date of birth</label><input class="fc" type="date"
+                                    id="dob" value="2002-03-15" readonly></div>
+                            <div class="col-sm-6"><label class="fl">NIC</label><input class="fc" id="nic"
+                                    value="200215XXXXXXX" readonly>
+                            </div>
+                            <div class="col-12"><label class="fl">Address</label><input class="fc" id="address"
+                                    value="42 Galle Road, Colombo 03" readonly></div>
+                            <div class="col-sm-6"><label class="fl">Province</label><input class="fc" id="province"
+                                    value="Western" readonly></div>
+                            <div class="col-sm-6"><label class="fl">Postal Code</label><input class="fc" id="zip"
+                                    value="10350" readonly></div>
+                            <div style="font-size:.75rem;color:var(--muted)"><i
+                                    class="bi bi-info-circle text-primary me-1"></i>To make any changes to your profile, please contact your driving school.
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<header class="topbar d-flex align-items-center justify-content-start gap-2">
+    <i id="formTitleIcon" class="bi bi-credit-card text-primary fs-5"></i>
+    <div class="topbar-text">
+        <div class="topbar-title" id="formTitle">New Payment</div>
+    </div>
+</header>
+
+<div class="container-fluid px-4">
+    <div class="mt-4">
+        <div class="dash-card">
+
+            <div class="dash-card-header">
+                Payment Details
+            </div>
+
+            <div class="dash-card-body">
+
+                <form id="addPaymentForm" action="#" method="post" novalidate>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Student
+                            <span class="required-mark">*</span>
+                        </label>
+
+                        <select id="studentId" class="form-select" required>
+                            <option value="">Select Student</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Amount (LKR) <span class="required-mark">*</span></label>
+                        <input type="number" id="amount" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Payment Method <span class="required-mark">*</span></label>
+                        <input type="text" class="form-control" id="method" name="method" value="Cash" readonly>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+
+                        <a href="#" onclick="loadPage('DisplayPayments.html','payments')"
+                            class="text-muted text-decoration-none">
+                            <i class="bi bi-arrow-left me-1"></i> Back to Payments
+                        </a>
+
+                        <button type="submit" class="btn btn-primary px-4">
+                            <i id="submitIcon" class="bi bi-person-plus me-2"></i>
+                            <span id="submitText">Add Payment</span>
+                        </button>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>

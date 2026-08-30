@@ -1,0 +1,35 @@
+.welcome-banner {
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f3251 60%);
+    color: #fff;
+    border-radius: 1rem;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-banner::after {
+    content: "";
+    position: absolute;
+    top: -40%;
+    right: -5%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.welcome-banner h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 0.35rem;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-banner p {
+    opacity: 0.9;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+}

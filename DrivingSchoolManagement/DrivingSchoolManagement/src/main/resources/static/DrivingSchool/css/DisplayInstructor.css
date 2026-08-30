@@ -1,0 +1,29 @@
+.instructor-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.status {
+    font-size: 0.72rem;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.status.available {
+    background: #e8f7ee;
+    color: #198754;
+}
+
+.status.inLesson {
+    background: #fff7e0;
+    color: #b08900;
+}

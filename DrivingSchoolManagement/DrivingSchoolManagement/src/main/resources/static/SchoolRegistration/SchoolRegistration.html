@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Driving School Registration — Learn2Drive</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+        <link href="SchoolRegistration.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+
+        <nav class="navbar navbar-expand-lg custom-navbar shadow-sm">
+            <div class="container  custom-container">
+                <a class="navbar-brand" href="../IndexPage/index.html">
+                    <div class="brand-name"><i class="bi bi-car-front-fill"></i> Drive<span>Connect</span></div>
+                </a>
+                <div class="ms-auto">
+                    <span class="text-white small me-2">Already registered?</span>
+                    <a href="../LoginForm/LoginForm.html" class="btn btn-outline-custom btn-sm">School Log In</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="custom-container2">
+            <section class="page-header text-center">
+                <div class="container">
+                    <h1><i class="bi bi-building me-2"></i>Driving School Registration</h1>
+                    <p>List your school on Learn2Drive and connect with students in your area.</p>
+                    <div class="progress-steps">
+                        <span class="progress-step active"><span class="dot"></span> School Details</span>
+                        <span class="progress-step active"><span class="dot"></span> Operations</span>
+                        <span class="progress-step active"><span class="dot"></span> Account Setup</span>
+                    </div>
+                </div>
+            </section>
+
+
+            <div class="container">
+                <div class="registration-card">
+                    <form id="schoolForm" novalidate>
+
+
+                        <div class="form-section">
+                            <div class="section-heading">
+                                <div class="section-icon"><i class="bi bi-building"></i></div>
+                                <div>
+                                    <h5>School Information</h5>
+                                    <small>Basic details about your driving school</small>
+                                </div>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="schoolName" class="form-label">School Name <span
+                                            class="required-mark">*</span></label>
+                                    <input type="text" class="form-control" id="schoolName" name="schoolName"
+                                        placeholder="SafeDrive Academy" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="drivingLicenseNo" class="form-label">Driving School License Number <span
+                                            class="required-mark">*</span></label>
+                                    <input type="text" class="form-control" id="drivingLicenseNo"
+                                        name="drivingLicenseNo" placeholder="DSL-987654" required>
+                                    <div class="input-hint">Your official driving school license issued by the transport
+                                        authority.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="yearEstablished" class="form-label">Year Established</label>
+                                    <input type="number" class="form-control" id="yearEstablished"
+                                        name="yearEstablished" placeholder="2010" min="1900" max="2026">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="schoolEmail" class="form-label">School Email <span
+                                            class="required-mark">*</span></label>
+                                    <input type="email" class="form-control" id="schoolEmail" name="schoolEmail"
+                                        placeholder="info@safedrive.com" required>
+                                    <div class="input-hint">This will be used to sign in to your school dashboard.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="schoolPhone" class="form-label">School Phone <span
+                                            class="required-mark">*</span></label>
+                                    <input type="tel" class="form-control" id="schoolPhone" name="schoolPhone"
+                                        placeholder="+1 (555) 987-6543" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="description" class="form-label">School Description</label>
+                                    <textarea class="form-control" id="description" name="description" rows="3"
+                                        placeholder="Briefly describe your school, specialties, and what makes you stand out..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-section">
+                            <div class="section-heading">
+                                <div class="section-icon"><i class="bi bi-person-badge"></i></div>
+                                <div>
+                                    <h5>Primary Contact</h5>
+                                    <small>Owner or manager responsible for this account</small>
+                                </div>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="contactFirstName" class="form-label">Full Name <span
+                                            class="required-mark">*</span></label>
+                                    <input type="text" class="form-control" id="contactFullName" name="contactFullName"
+                                        placeholder="Jane" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="contactPhone" class="form-label">Direct Phone <span
+                                            class="required-mark">*</span></label>
+                                    <input type="tel" class="form-control" id="contactPhone" name="contactPhone"
+                                        placeholder="+1 (555) 456-7890" required>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-section">
+                            <div class="section-heading">
+                                <div class="section-icon"><i class="bi bi-geo-alt"></i></div>
+                                <div>
+                                    <h5>School Location</h5>
+                                    <small>Where students can find and visit your school</small>
+                                </div>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label for="street" class="form-label">Street Address <span
+                                            class="required-mark">*</span></label>
+                                    <input type="text" class="form-control" id="street" name="street"
+                                        placeholder="456 Oak Avenue" required>
+                                </div>
+                                <div class="col-md-5">
+                                    <label for="city" class="form-label">City <span
+                                            class="required-mark">*</span></label>
+                                    <input type="text" class="form-control" id="city" name="city"
+                                        placeholder="Springfield" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="state" class="form-label">State / Province <span
+                                            class="required-mark">*</span></label>
+                                    <input type="text" class="form-control" id="state" name="state"
+                                        placeholder="California" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="zip" class="form-label">ZIP / Postal Code <span
+                                            class="required-mark">*</span></label>
+                                    <input type="text" class="form-control" id="zip" name="zip" placeholder="90210"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-section">
+
+                            <div class="section-heading">
+                                <div class="section-icon">
+                                    <i class="bi bi-tags"></i>
+                                </div>
+
+                                <div>
+                                    <h5>Courses & Packages</h5>
+                                    <small>Add courses or packages offered by your school</small>
+                                </div>
+                            </div>
+
+                            <div id="packageContainer">
+                            </div>
+                            <button type="button" id="addPackage" class="btn btn-outline-primary mt-3">
+                                <i class="bi bi-plus-circle"></i>
+                                Add Another Course / Package
+                            </button>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="transmission" class="form-label mt-3">Transmission Types Offered <span
+                                            class="required-mark">*</span></label> <select class="form-select"
+                                        id="transmission" name="transmission" required>
+                                        <option value="" selected disabled>Select option</option>
+                                        <option value="Auto">Automatic only</option>
+                                        <option value="Manual">Manual only</option>
+                                        <option value="Both">Both automatic and manual</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6"> <label for="operatingHours" class="form-label mt-3">Operating
+                                        Hours
+                                        <span class="required-mark">*</span></label> <select class="form-select"
+                                        id="operatingHours" name="operatingHours" required>
+                                        <option value="" selected disabled>Select hours</option>
+                                        <option value="Weekday">Weekdays only</option>
+                                        <option value="Weekend">Weekends only</option>
+                                        <option value="Both">Weekdays &amp; weekends</option>
+                                        <option value="Flex">Flexible / by appointment</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-section">
+                            <div class="section-heading">
+                                <div class="section-icon"><i class="bi bi-file-earmark-check"></i></div>
+                                <div>
+                                    <h5>Licensing &amp; Verification</h5>
+                                    <small>Required for school verification on the platform</small>
+                                </div>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="insuranceProvider" class="form-label">Insurance Provider <span
+                                            class="required-mark">*</span></label>
+                                    <input type="text" class="form-control" id="insuranceProvider"
+                                        name="insuranceProvider" placeholder="ABC Insurance Co." required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="insurancePolicy" class="form-label">Insurance Policy Number <span
+                                            class="required-mark">*</span></label>
+                                    <input type="text" class="form-control" id="insurancePolicy" name="insurancePolicy"
+                                        placeholder="POL-123456789" required>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-section">
+                            <div class="section-heading">
+                                <div class="section-icon"><i class="bi bi-shield-lock"></i></div>
+                                <div>
+                                    <h5>Account Setup</h5>
+                                    <small>Create login credentials for your school dashboard</small>
+                                </div>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="password" class="form-label">Password <span
+                                            class="required-mark">*</span></label>
+                                    <input type="password" class="form-control" id="password" name="password"
+                                        placeholder="Minimum 8 characters" minlength="8" required>
+                                    <div class="input-hint">Use at least 8 characters with a mix of letters and numbers.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-footer">
+
+                            <div class="d-flex flex-wrap gap-3 align-items-center">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="bi bi-check-circle me-1"></i> Register School
+                                </button>
+                                <a href="../IndexPage/index.html" class="text-muted text-decoration-none">
+                                    <i class="bi bi-arrow-left me-1"></i> Back to Home
+                                </a>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+
+            <footer class="footer">
+                <p class="mb-1">© 2026 <b>DriveConnect</b>. Connecting Students and Driving Schools.
+            </footer>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="SchoolRegistration.js"></script>
+    </body>
+
+</html>

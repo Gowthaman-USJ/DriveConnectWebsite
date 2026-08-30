@@ -1,0 +1,92 @@
+<header class="topbar d-flex align-items-center justify-content-start gap-2">
+    <i id="formTitleIcon" class="bi bi-calendar-plus text-primary fs-5"></i>
+    <div class="topbar-text">
+        <div class="topbar-title" id="formTitle">Book Lesson</div>
+    </div>
+</header>
+
+<div class=" container-fluid px-4">
+    <div class="mt-4">
+
+        <div class="dash-card">
+
+            <div class="dash-card-header">
+                Book Lesson
+            </div>
+
+            <div class="dash-card-body">
+
+                <form id="addLesson" method="post" novalidate>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                Student <span class="required-mark">*</span>
+                            </label>
+
+                            <select id="stuID" class="form-select" required>
+                                <option value="">Select Student</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                Instructor <span class="required-mark">*</span>
+                            </label>
+
+                            <select id="insID" class="form-select" required>
+                                <option value="">Select Instructor</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mt-1">
+                        <div class="col-md-6">
+                            <label class="form-label">Time <span class="required-mark">*</span></label>
+                            <input type="time" id="time" class="form-control time-pill">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Date <span class="required-mark">*</span></label>
+                            <input type="date" id="date" class="form-control selectdate-pill">
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <a href="#" onclick="loadPage('DisplaySchedule.html','schedule')"
+                            class="text-muted text-decoration-none">
+                            <i class="bi bi-arrow-left me-1"></i> Back Schedule
+                        </a>
+
+                        <button type="submit" class="btn btn-primary px-4">
+                            <i id="submitIcon" class="bi bi-plus-circle me-1"></i>
+                            <span id="submitText">Book Lesson</span>
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="toast-container position-fixed top-0 end-0 p-3">
+
+    <div id="lessonToast" class="toast text-bg-success border-0" role="alert">
+
+        <div class="d-flex">
+            <div class="toast-body py-2 px-3" id="lessonToastMsg">
+                Lesson added successfully!
+            </div>
+
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+
+    </div>
+
+</div>

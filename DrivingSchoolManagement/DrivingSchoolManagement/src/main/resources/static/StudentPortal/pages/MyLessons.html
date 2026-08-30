@@ -1,0 +1,45 @@
+<header class="topbar">
+    <button class="ib mob-tog" onclick="document.getElementById('sidebar').classList.toggle('open')"><i
+            class="bi bi-list"></i></button>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="topbar-icon-btn">
+            <i class="bi bi-calendar-check"></i>
+        </div>
+        <div class="tb-title" id="tbTitle">My Lessons</div>
+    </div>
+</header>
+
+
+<div class="content">
+    <div class="view active" id="view-lessons">
+        <div class="row g-3">
+            <div class="col-lg-8">
+                <div class="d-flex gap-2 mb-3 flex-wrap" id="filterTabs">
+                    <button class="btn-prim" style="font-size:.76rem;padding:.4rem .9rem" id="ft-all"
+                        onclick="filterLessons('all')">All</button>
+                    <button class="btn-out" style="font-size:.76rem;padding:.38rem .85rem" id="ft-upcoming"
+                        onclick="filterLessons('upcoming')">Upcoming</button>
+                    <button class="btn-out" style="font-size:.76rem;padding:.38rem .85rem" id="ft-done"
+                        onclick="filterLessons('done')">Completed</button>
+                </div>
+                <div class="panel">
+                    <div class="ph">
+                        <h6 id="lessTitle"><i class="bi bi-list-ul text-primary me-2"></i>All Lessons</h6><button
+                            class="btn-prim" style="font-size:.74rem;padding:.38rem .9rem"
+                            onclick="loadPage('BookLesson.html','BookLesson')"><i class="bi bi-plus-lg me-1"></i>Book
+                            new</button>
+                    </div>
+                    <div id="lessBody"></div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel">
+                    <div class="ph">
+                        <h6><i class="bi bi-bar-chart text-primary me-2"></i>Summary</h6>
+                    </div>
+                    <div class="pbd" id="lessSummary"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

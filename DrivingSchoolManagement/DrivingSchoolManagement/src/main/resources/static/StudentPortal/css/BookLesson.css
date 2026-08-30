@@ -1,0 +1,40 @@
+.tslot {
+    transition: all 0.2s ease;
+}
+
+.tslot.selected {
+    background-color: #0d6efd !important;
+    color: white !important;
+    border-color: #0d6efd !important;
+}
+
+.tslot.full {
+    background-color: #e9ecef !important;
+    color: #6c757d !important;
+    border-color: #dee2e6 !important;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.tslot.selected {
+    background-color: #0d6efd !important;
+    color: white !important;
+    border-color: #0d6efd !important;
+}
+
+.tslot.full {
+    background-color: #e9ecef !important;
+    color: #6c757d !important;
+    border-color: #dee2e6 !important;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.tslot.full .booked-text {
+    font-size: 0.65rem;
+    font-weight: 600;
+}
+
+.sum-row{display:flex;justify-content:space-between;align-items:center;padding:.42rem 0;border-bottom:1px solid #f1f5f9;font-size:.83rem}
+.sum-row:last-child{border-bottom:none}
+.sum-row .sl{color:var(--muted)}.sum-row .sv{font-weight:600}

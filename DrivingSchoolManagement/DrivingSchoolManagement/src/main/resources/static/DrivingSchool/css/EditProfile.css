@@ -1,0 +1,28 @@
+.section-heading2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.section-icon2 {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.section-icon2 i {
+    font-size: 22px;
+}
+
+.section-heading2 h5 {
+    margin: 0 0 3px 0;
+}
+
+.section-heading2 small {
+    color: #6c757d;
+    font-size: 0.85rem;
+}

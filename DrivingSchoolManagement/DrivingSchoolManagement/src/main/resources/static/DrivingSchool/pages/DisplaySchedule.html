@@ -1,0 +1,143 @@
+<header class="topbar">
+    <div class="topbar-left">
+
+        <button class="mob-menu-btn topbar-icon-btn d-lg-none"
+            onclick="document.getElementById('sidebar').classList.toggle('open')">
+            <i class="bi bi-list"></i>
+        </button>
+        <div class="topbar-icon-btn">
+            <i class="bi bi-calendar3"></i>
+        </div>
+
+        <div class="topbar-text">
+            <div class="topbar-title" id="topbarTitle">Schedule</div>
+            <small class="text-muted">Manage all schedules</small>
+        </div>
+    </div>
+
+
+    <div class="d-flex gap-2 justify-content-start">
+
+        <button type="button" onclick="loadPage('BookLesson.html','schedule')"
+            class="btn btn-primary d-flex align-items-center gap-2">
+            <i class="bi bi-calendar-plus"></i>
+            Book Lesson
+        </button>
+    </div>
+</header>
+
+<div class="page-body">
+
+    <div class="container-fluid px-4">
+        <div class="d-flex gap-2 mb-3">
+
+            <div><input type="date" id="scheduleDate" onchange="filterScheduleByDate()"
+                    class="form-control w-auto date-pill"></div>
+            <button type="button" class="btn btn-outline-dark btn-sm resetbutton" onclick="resetDate()">
+                Reset
+            </button>
+        </div>
+    </div>
+
+    <div class="row g-3 mb-3">
+        <div class="col-md-3">
+            <div class="card summary-card p-3">
+                <h6>Total</h6>
+                <h3 id="totalCount"></h3>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card summary-card p-3">
+                <h6>Completed</h6>
+                <h3 id="completedCount"></h3>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card summary-card p-3">
+                <h6>In Progress</h6>
+                <h3 id="progressCount"></h3>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card summary-card p-3">
+                <h6>Scheduled</h6>
+                <h3 id="scheduledCount"></h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-table">
+        <div class="table-responsive">
+
+            <table class="table table-hover align-middle mb-0">
+
+                <thead class="table-light">
+                    <tr>
+                        <th>Time</th>
+                        <th>Student ID</th>
+                        <th>Student</th>
+                        <th>Instructor ID</th>
+                        <th>Instructor</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="scheduleTableBody">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+</div>
+
+<div class="modal fade" id="deleteLessonModal" tabindex="-1">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-danger">
+                    <i class="bi bi-trash-fill me-2"></i>
+                    Delete Lesson
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body text-center">
+                <i class="bi bi-exclamation-triangle-fill text-warning fs-1"></i>
+                <h5 class="mt-3">Are you sure?</h5>
+                <p class="text-muted">This lesson will be permanently deleted.</p>
+            </div>
+
+            <div class="modal-footer border-0">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button class="btn btn-danger" onclick="confirmDeleteLesson()">Delete</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="toast-container position-fixed top-0 end-0 p-3">
+
+    <div id="deleteToast" class="toast align-items-center text-bg-danger border-0 compact-toast" role="alert">
+        <div class="d-flex">
+            <div class="toast-body">
+                Lesson deleted successfully !
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+    </div>
+
+    <div id="lessonToast" class="toast text-bg-success border-0 compact-toast" role="alert">
+
+        <div class="d-flex">
+            <div class="toast-body py-2 px-3" id="lessonToastMsg">
+                Lesson added successfully !
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+
+    </div>
+</div>

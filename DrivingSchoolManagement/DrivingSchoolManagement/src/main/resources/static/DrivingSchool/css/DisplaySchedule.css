@@ -1,0 +1,48 @@
+.resetbutton {
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 0.8rem;
+    line-height: 1;
+}
+
+@media (max-width: 576px) {
+    .resetbutton {
+        width: 100%;
+        margin-top: 8px;
+    }
+}
+
+.date-pill {
+
+    width: 100%;
+    margin-left: -20px;
+    border: 1px solid #dbe3ef;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+    padding: 12px 35px !important;
+    font-size: 16px;
+}
+
+.summary-card {
+    border: none;
+    border-radius: 18px;
+    text-align: center;
+    padding: 18px 14px;
+    background: linear-gradient(145deg, #ffffff, #f7f9ff);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 35px rgba(37, 99, 235, 0.18);
+}
+
+.summary-card h3 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+}

@@ -1,0 +1,245 @@
+<header class="topbar">
+    <div class="topbar-left">
+
+        <button class="mob-menu-btn topbar-icon-btn d-lg-none"
+            onclick="document.getElementById('sidebar').classList.toggle('open')">
+            <i class="bi bi-list"></i>
+        </button>
+        <div class="topbar-icon-btn">
+            <i class="bi bi-person-square"></i>
+        </div>
+
+        <div class="topbar-text">
+            <div class="topbar-title" id="topbarTitle">Profile</div>
+            <small class="text-muted">Manage driving school details</small>
+        </div>
+    </div>
+
+</header>
+
+<div class="page-body">
+    <div class="container-fluid px-4">
+
+        <div class="card-table mt-4 p-4">
+
+            <div class="d-flex align-items-center mb-4">
+                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center"
+                    style="width:70px;height:70px;">
+                    <i class="bi bi-building fs-2"></i>
+                </div>
+
+                <div class="ms-3">
+                    <h3 class="mb-1" id="profileSchoolName">SafeWheels Academy</h3>
+
+                </div>
+
+                <button class="btn btn-outline-primary ms-auto" onclick="editSchoolProfile()">
+                    <i class="bi bi-pencil"></i> Edit Profile
+                </button>
+            </div>
+
+            <h5 class="mb-3">
+                <i class="bi bi-building text-primary"></i>
+                School Information
+            </h5>
+
+            <div class="table-responsive">
+                <table class="table">
+
+                    <tbody>
+
+                        <tr>
+                            <td width="25%">School Name</td>
+                            <td id="schoolNameDisplay">SafeDrive Academy</td>
+                        </tr>
+
+                        <tr>
+                            <td>Driving School License</td>
+                            <td id="drivingLicenseDisplay">DSL-987654</td>
+                        </tr>
+
+                        <tr>
+                            <td>Established Year</td>
+                            <td id="establishedYearDisplay">2010</td>
+                        </tr>
+
+                        <tr>
+                            <td>Email</td>
+                            <td id="emailDisplay">info@safedrive.com</td>
+                        </tr>
+
+                        <tr>
+                            <td>Phone</td>
+                            <td id="phoneDisplay">0771234567</td>
+                        </tr>
+
+                        <tr>
+                            <td>Description</td>
+                            <td id="descriptionDisplay">
+                                SafeDrive Academy provides professional driving lessons
+                                with experienced instructors and modern vehicles.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+            <h5 class="mt-4 mb-3">
+                <i class="bi bi-person-badge text-primary"></i>
+                Primary Contact
+            </h5>
+
+
+            <table class="table">
+
+                <tbody>
+
+                    <tr>
+                        <td width="25%">Full Name</td>
+                        <td id="contactNameDisplay">John Anderson</td>
+                    </tr>
+
+                    <tr>
+                        <td>Phone</td>
+                        <td id="contactPhoneDisplay">0719876543</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+            <h5 class="mt-4 mb-3">
+                <i class="bi bi-geo-alt text-primary"></i>
+                School Location
+            </h5>
+
+
+            <table class="table">
+
+                <tbody>
+
+                    <tr>
+                        <td width="25%">Address</td>
+                        <td id="addressDisplay">123 Main Street</td>
+                    </tr>
+
+                    <tr>
+                        <td>City</td>
+                        <td id="cityDisplay">Colombo</td>
+                    </tr>
+
+                    <tr>
+                        <td>Province</td>
+                        <td id="stateDisplay">Western Province</td>
+                    </tr>
+
+                    <tr>
+                        <td>Postal Code</td>
+                        <td id="zipDisplay">00100</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <h5 class="mt-4 mb-3">
+                <i class="bi bi-journal-bookmark text-primary"></i>
+                Course Information
+            </h5>
+
+
+            <table class="table">
+
+                <tbody>
+                    <tr>
+                        <td width="25%">Courses & Packages</td>
+                        <td id="coursesDisplay">
+
+                            <span class="text-muted">
+                                Loading courses...
+                            </span>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Transmission</td>
+                        <td id="transmissionDisplay">Automatic & Manual</td>
+                    </tr>
+
+                    <tr>
+                        <td>Operating Hours</td>
+                        <td id="operatingHoursDisplay">Weekdays & Weekends</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+            </tbody>
+
+            </table>
+
+
+
+
+            <!-- Verification -->
+
+            <h5 class="mt-4 mb-3">
+                <i class="bi bi-file-earmark-check text-primary"></i>
+                Licensing & Verification
+            </h5>
+            <table class="table">
+
+                <tbody>
+
+                    <tr>
+                        <td width="25%">Insurance Provider</td>
+                        <td id="insuranceProviderDisplay">ABC Insurance Co.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Insurance Policy</td>
+                        <td id="insurancePolicyDisplay">POL-123456789</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h5 class="mt-4 mb-3">
+                <i class="bi bi-shield-lock text-primary"></i>
+                Account Setup
+            </h5>
+
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td width="25%">Password</td>
+                        <td>
+                            <span>••••••••</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>
+<div class="position-fixed top-0 end-0 p-3" style="z-index:9999">
+
+    <div id="successToast" class="toast text-bg-success border-0">
+
+        <div class="d-flex">
+
+            <div class="toast-body" id="successToastMessage">
+
+            </div>
+
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast">
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

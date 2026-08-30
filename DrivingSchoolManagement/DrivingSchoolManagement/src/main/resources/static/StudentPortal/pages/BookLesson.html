@@ -1,0 +1,127 @@
+<header class="topbar">
+    <button class="ib mob-tog" onclick="document.getElementById('sidebar').classList.toggle('open')"><i
+            class="bi bi-list"></i></button>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="topbar-icon-btn">
+            <i class="bi bi-calendar-plus"></i>
+        </div>
+        <div class="tb-title" id="tbTitle">Book A Lesson</div>
+    </div>
+</header>
+
+
+
+<div class="content">
+    <div class="view active" id="view-book">
+        <div class="row g-3 justify-content-center">
+            <div class="col-lg-8">
+                <div class="panel">
+                    <div class="ph">
+                        <h6><i class="bi bi-calendar-plus text-primary me-2"></i>Book a Lesson</h6>
+                    </div>
+                    <div class="pbd">
+                        <div class="stepper" id="bookStepper"></div>
+                        <div id="bStep1">
+                            <p class="sec-lbl">Select a date for your lesson</p>
+                            <div class="cal-nav"><button class="cal-btn" onclick="calShift(-1)"><i
+                                        class="bi bi-chevron-left"></i></button><span class="cal-nav-title"
+                                    id="calLbl"></span><button class="cal-btn" onclick="calShift(1)"><i
+                                        class="bi bi-chevron-right"></i></button>
+                            </div>
+                            <div class="cal-grid mb-3" id="calGrid"></div>
+                            <div class="d-flex gap-3 flex-wrap" style="font-size:.7rem;color:var(--muted)">
+                                <span><span
+                                        style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--blue);margin-right:.3rem;vertical-align:middle"></span>Today</span>
+                                <span><span
+                                        style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--amber);margin-right:.3rem;vertical-align:middle"></span>Lesson Day</span>
+                                <span style="display:inline-flex;align-items:center;gap:.3rem"><span
+                                        style="display:inline-block;width:10px;height:10px;border:1.5px dashed #bfdbfe;border-radius:50%"></span>Available</span>
+                            </div>
+                        </div>
+                        <div id="bStep2" style="display:none">
+                            <div class="d-flex align-items-start justify-content-between gap-3 flex-wrap mb-3">
+                                <div>
+                                    <p class="sec-lbl">Available time slots</p>
+                                    <div style="font-size:.82rem;font-weight:600" id="bDateLbl"></div>
+                                </div>
+                            </div>
+                            <div class="slot-grid" id="slotsGrid"></div>
+                            <div style="font-size:.69rem;color:var(--muted);margin-top:.6rem">🔵 Selected
+                            </div>
+                        </div>
+                        <div id="bStep3" style="display:none">
+                            <div style="background:#f8fafc;border-radius:10px;padding:1rem 1.1rem;margin-bottom:1rem"
+                                id="bSummary"></div>
+                        </div>
+                        <div id="bStep4" style="display:none">
+                            <div class="success-screen">
+                                <div class="suc-icon">✅</div>
+                                <h5 style="font-weight:800;margin-bottom:.4rem">Lesson booked!</h5>
+                                <div style="background:#f8fafc;border-radius:10px;padding:.9rem 1rem;font-size:.81rem;text-align:left;max-width:290px;margin:0 auto"
+                                    id="bSuccessBox"></div>
+                                <button class="btn-prim mt-3" onclick="loadPage('BookLesson.html','BookLesson')"><i
+                                        class="bi bi-calendar-plus me-1"></i>Book Another Lesson</button>
+                                <button class="btn-prim mt-3" onclick="loadPage('MyLessons.html','MyLessons')"><i
+                                        class="bi bi-calendar-check me-1"></i>View my lessons</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding:.9rem 1.2rem;border-top:1px solid #f1f5f9;display:flex;gap:.65rem;justify-content:flex-end"
+                        id="bookFooter">
+                        <button class="btn-out" id="bBack" onclick="bookBack()" style="display:none">← Back</button>
+                        <button class="btn-out" id="bCancel"
+                            onclick="loadPage('BookLesson.html','BookLesson')">Cancel</button>
+                        <button class="btn-prim" id="bNext" onclick="bookNext()">Choose Time →</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel mb-3">
+                    <div class="ph">
+                        <h6><i class="bi bi-person text-primary me-2"></i>Instructor</h6>
+                    </div>
+                    <div class="pbd">
+                        <div class="d-flex align-items-center gap-3 mb-2">
+                            <div id="instructorInitials"
+                                style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:1rem;flex-shrink:0">
+                                KP</div>
+                            <div>
+                                <div id="instructorName" style="font-weight:700;font-size:.87rem">Loading...</div>
+                                <div id="instructorPhone" style="font-size:.72rem;color:var(--muted)">Loading...</div>
+                                <div id="instructorAvailability" style="font-size:.72rem;color:var(--muted)">Loading...
+                                </div>
+                            </div>
+                        </div>
+                        <div style="font-size:.75rem;color:var(--muted)"><i
+                                class="bi bi-info-circle text-primary me-1"></i>1-hour lessons. Bring your learner's
+                            permit.
+                        </div>
+                        <div style="font-size:.75rem;color:var(--muted); margin-top:5px;">
+                            <i class="bi bi-info-circle text-primary me-1"></i>
+                            You can only book one lesson per day. For more details, contact your driving school.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="ph">
+                        <h6><i class="bi bi-bag text-primary me-2"></i>Package</h6>
+                    </div>
+                    <div class="pbd">
+                        <div id="courseName" style="font-weight:700;font-size:.88rem;margin-bottom:.12rem">Standard (15
+                            lessons)</div>
+                        <div id="schoolName" style="font-size:.74rem;color:var(--muted);margin-bottom:.65rem">SafeWheels
+                            Driving Academy</div>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="pbar-wrap" style="flex:1">
+                                <div id="courseProgress" class="pbar" style="width:60%"></div>
+                            </div><span id="courseSessions" style="font-size:.74rem;font-weight:700">9/15</span>
+                        </div>
+                        <div id="remainingSessions" style="font-size:.69rem;color:var(--muted);margin-top:.2rem">6
+                            lessons
+                            remaining</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

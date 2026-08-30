@@ -1,0 +1,147 @@
+<div id="sidebar"></div>
+<div id="sidebarOverlay"></div>
+
+<header class="topbar">
+
+    <button class="mob-menu-btn topbar-icon-btn d-lg-none"
+        onclick="document.getElementById('sidebar').classList.toggle('open')">
+        <i class="bi bi-list"></i>
+    </button>
+
+    <div class="topbar-icon-btn">
+        <i class="bi bi-grid-1x2"></i>
+    </div>
+    <div>
+        <div class="topbar-title" id="topbarTitle">Dashboard</div>
+    </div>
+    <div class="topbar-actions">
+
+        <div class="instr-avatar" id="topbarAvatar" style=" width:36px;height:36px;font-size:0.85rem;cursor:pointer;"
+            title="Profile">
+            </div>
+    </div>
+</header>
+
+<div class="page-body">
+
+    <main class="dashboard-content">
+
+        <div class="welcome-banner">
+            <h2>
+                <span id="greeting"></span>,
+                <span id="managename"></span> 👋
+            </h2>
+        </div>
+    </main>
+
+    <div class="row g-3 mb-4">
+        <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="stat-icon blue"><i class="bi bi-people-fill"></i></div>
+
+                </div>
+                <div class="stat-value" id="students"></div>
+                <div class="stat-label">Active Students</div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="stat-icon green"><i class="bi bi-person-badge-fill"></i></div>
+
+                </div>
+                <div class="stat-value" id="instructors"></div>
+                <div class="stat-label">Instructors</div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="stat-icon orange"><i class="bi bi-calendar-check"></i></div>
+                </div>
+                <div class="stat-value" id="todayLessons"></div>
+                <div class="stat-label">Lessons Today</div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="stat-icon purple"><i class="bi bi-car-front"></i></div>
+
+                </div>
+                <div class="stat-value" id="vehicles"></div>
+                <div class="stat-label">Vehicles</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-3 mb-4">
+
+        <div class="col-lg-8">
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <h5><i class="bi bi-calendar3 me-2 text-primary"></i>Today's Schedule</h5>
+                    <a href="#" onclick="loadPage('DisplaySchedule.html','schedule')"
+                        class="btn btn-sm btn-outline-primary">View Full Calendar</a>
+                </div>
+                <div class="dash-card-body no-padding">
+                    <div class="table-responsive">
+                        <table class="table table-dashboard">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Student</th>
+                                    <th>Instructor</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="scheduleTableBody">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <h5><i class="bi bi-lightning-fill me-2 text-primary"></i>Quick Actions</h5>
+                </div>
+                <div class="dash-card-body">
+                    <div class="row g-2">
+
+                        <div class="col-6">
+                            <a href="#" onclick="loadPage('BookLesson.html','schedules')" class="quick-action">
+                                <i class="bi bi-calendar-plus"></i>
+                                Book Lesson
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="#" onclick="openAddInstructor()" class="quick-action">
+                                <i class="bi bi-person-badge"></i>
+                                Add Instructor
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="#" onclick="openAddVehicle()" class="quick-action">
+                                <i class="bi bi-car-front"></i>
+                                Add Vehicle
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="#" onclick="loadPage('AddPayment.html','payments')" class="quick-action">
+                                <i class="bi bi-receipt"></i>
+                                Record Payment
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+</div>

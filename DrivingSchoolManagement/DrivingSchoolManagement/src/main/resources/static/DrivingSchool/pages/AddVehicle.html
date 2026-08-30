@@ -1,0 +1,114 @@
+<header class="topbar d-flex align-items-center justify-content-start gap-2">
+    <i id="formTitleIcon" class="bi bi-car-front text-primary fs-5"></i>
+    <div class="topbar-text">
+        <div class="topbar-title" id="formTitle">Add Vehicle</div>
+    </div>
+</header>
+
+<div class=" container-fluid px-4">
+    <div class="mt-4">
+
+        <div class="dash-card">
+
+            <div class="dash-card-header">
+                Vehicle Details
+            </div>
+
+            <div class="dash-card-body">
+
+                <form id="addvehicleForm" method="post" novalidate>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Vehicle Brand<span class="required-mark"> *</span></label>
+                            <input type="text" id="brand" class="form-control" placeholder="e.g. Toyota" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Vehicle Model<span class="required-mark"> *</span></label>
+                            <input type="text" id="model" class="form-control" placeholder="e.g. Corolla" required>
+                        </div>
+                    </div>
+
+
+                    <div class="row g-3  mt-2">
+                        <div class="col-md-6">
+                            <label class="form-label">Vehicle Make Year<span class="required-mark"> *</span></label>
+                            <input type="text" id="makeyear" class="form-control" placeholder="e.g. 2023" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Vehicle Plate Number<span class="required-mark"> *</span></label>
+                            <input type="text" id="platenum" class="form-control" placeholder="e.g. CBD 4878" required>
+                        </div>
+                    </div>
+
+                    <div class="row g-3  mt-2">
+                        <div class="col-md-6">
+                            <label class="form-label">Status<span class="required-mark"> *</span></label>
+                            <select class="form-select" id="status">
+                                <option value="" selected>Select (optional)</option>
+                                <option value="Available">Available</option>
+                                <option value="Maintenance">Maintenance</option>
+                                <option value="InLesson" hidden>In Lesson</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Fuel Type <span class="required-mark"> *</span></label>
+                            <select class="form-select" id="fueltype">
+                                <option value="" selected>Select (optional)</option>
+                                <option value="Petrol">Petrol</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="Hybrid">Hybrid</option>
+                                <option value="Electric">Electric</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row g-3  mt-2">
+                        <div class="col-md-6">
+                            <label class="form-label">Transmission <span class="required-mark"> *</span></label>
+                            <select class="form-select" id="transmission">
+                                <option value="" selected>Select (optional)</option>
+                                <option value="Automatic">Automatic</option>
+                                <option value="Manual">Manual</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Mileage (KM) <span class="required-mark"> *</span></label>
+                            <input type="number" id="mileage" class="form-control" placeholder="e.g. 45000">
+                        </div>
+                    </div>
+
+
+
+                    <div class="mt-3">
+                        <label class="form-label">Remarks</label>
+                        <textarea id="notes" class="form-control" rows="3"
+                            placeholder="Any special notes about the vehicle"></textarea>
+                    </div>
+                    <small class="text-muted">
+                        Ensure vehicle details are correct before saving
+                    </small>
+
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+
+                        <a href="#" onclick="loadPage('DisplayVehicles.html','vehicles'); return false;"
+                            class="text-muted text-decoration-none">
+                            <i class="bi bi-arrow-left me-1"></i> Back to Vehicles
+                        </a>
+
+                        <button type="submit" class="btn btn-primary px-4">
+                            <i id="submitIcon" class="bi bi-plus-circle me-2"></i>
+                            <span id="submitText">Add Vehicle</span>
+                        </button>
+                    </div>
+            </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+</div>
